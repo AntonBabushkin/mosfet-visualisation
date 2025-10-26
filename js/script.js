@@ -134,8 +134,8 @@ function update_geometry() {
   // Readouts
   vgs_value.textContent = `${Vgs.toFixed(1)} V`;
   vds_value.textContent = `${Vds.toFixed(1)} V`;
-  vth_value.textContent = `${VTH.toFixed(2)} V`;
-  vov_value.textContent = `${Vov.toFixed(2)} V`;
+  vth_value.textContent = `${VTH.toFixed(1)} V`;
+  vov_value.textContent = `${Vov.toFixed(1)} V`;
   len_value.innerHTML = len > 0.6 ? "Long (2×L<sub>min</sub>)" : "Short (L<sub>min</sub>)";
   
   let modeText = "";
