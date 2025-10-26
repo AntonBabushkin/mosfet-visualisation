@@ -131,7 +131,25 @@
       The small-signal transconductance is related to \( K \) by \( g_m = K(V_{GS} - V_{TH}) \),
       showing that \( g_m \) increases linearly with overdrive voltage.
     </p>
-  
+    
+	<p>
+      The <strong>channel-length modulation coefficient</strong> \( \lambda \) depends inversely on the effective
+      channel length \( L \). Shorter devices exhibit stronger channel-length modulation
+      because the depletion region at the drain consumes a larger fraction of the total channel,
+      effectively reducing the active channel length as <i>V<sub>DS</sub></i> increases.
+      Empirically, \( \lambda \) scales approximately as:
+    </p>
+    
+    <p>
+      $$ \lambda \propto \frac{1}{L} $$
+    </p>
+    
+    <p class="note">
+      As a result, long-channel devices show almost flat <i>I<sub>D</sub></i>–<i>V<sub>DS</sub></i> curves
+      in saturation (small <i>λ</i>), while short-channel devices display noticeable upward slope,
+      reflecting the increased dependence of current on drain voltage.
+    </p>
+    
     
   </section>
   

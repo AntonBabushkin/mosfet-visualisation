@@ -113,7 +113,7 @@ input[type="range"] {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #A3E4D7;          /* soft teal = Long */
+  background-color: #AED6F1;          /* light blue for Long (unchecked) */
   transition: background-color 0.4s;
   border-radius: 34px;
 }
