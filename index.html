@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MOSFET Visualisation (Simplified Model)</title>
+</head>
+<body>
+  <h1>MOSFET Visualisation (Simplified Model)</h1>
+  
+  <div class="slider-block dual-slider">
+    <div class="slider-group">
+      <label>V<sub>GS</sub>:</label>
+      <input type="range" id="vgsSlider" min="0" max="3" step="0.1" value="0">
+      <span id="vgsValue">0.0 V</span>
+    </div>
+  
+    <div class="slider-group">
+      <label>V<sub>DS</sub>:</label>
+      <input type="range" id="vdsSlider" min="0" max="3" step="0.1" value="0">
+      <span id="vdsValue">0.0 V</span>
+    </div>
+  </div>
+  
+  <div class="slider-block dual-toggle">
+    <div class="toggle-group">
+      <label>Channel: Length</label>
+      <label class="switch">
+        <input type="checkbox" id="lenSwitch">
+        <span class="slider round"></span>
+      </label>
+      <span id="lenValue">Long (2×L<sub>min</sub>)</span>
+    </div>
+  
+    <div class="toggle-group">
+      <label>Width</label>
+      <label class="switch">
+        <input type="checkbox" id="widthSwitch">
+        <span class="slider round"></span>
+      </label>
+      <span id="widthValue">W<sub>min</sub></span>
+    </div>
+  </div>
+  
+  <object id="mosfetSVG" data="assets/MOSFET.svg" type="image/svg+xml"></object>
+  
+  <div id="readouts">
+    <span class="readout">V<sub>th</sub>=<span id="vthValue">0.5</span></span>
+    <span class="readout">V<sub>ov</sub>=<span id="vovValue">0.0</span></span>
+    <span class="readout">W/L∝<span id="woverlValue">1/2</span></span>
+  </div>
+  
+  <div class="plots-wrapper">
+    <div class="plot-container">
+      <div class="chart-block"><canvas id="chartVgs"></canvas></div>
+      <div class="chart-block"><canvas id="chartVds"></canvas></div>
+    </div>
+  </div>
+  
+  <section id="description">
+    <h2>Operation Overview</h2>
+    <p>
+      This simulator visualizes the <strong>n-channel MOSFET</strong> behavior under different
+      gate–source (<i>V<sub>GS</sub></i>) and drain–source (<i>V<sub>DS</sub></i>) voltages.
+      Adjust the sliders to explore how the channel forms and how the device current responds.
+    </p>
+    
+    <h3>Modes of Operation</h3>
+    <ul>
+      <li><strong>Cutoff region:</strong> When <i>V<sub>GS</sub></i> &lt; <i>V<sub>TH</sub></i>, 
+        the transistor is off — no conduction channel is formed, and drain current ≈ 0.</li>
+      <li><strong>Linear (Ohmic) region:</strong> When <i>V<sub>GS</sub></i> &gt; <i>V<sub>TH</sub></i> 
+        and <i>V<sub>DS</sub></i> &lt; <i>V<sub>GS</sub></i> − <i>V<sub>TH</sub></i>, the device acts 
+        as a voltage-controlled resistor.</li>
+      <li><strong>Saturation region:</strong> When <i>V<sub>DS</sub></i> ≥ <i>V<sub>GS</sub></i> − <i>V<sub>TH</sub></i>, 
+        the channel pinches off near the drain, and current is limited by the overdrive voltage.</li>
+    </ul>
+  
+    <h3>Controls</h3>
+    <ul>
+      <li><strong>V<sub>GS</sub></strong> — sets gate voltage and controls channel formation.</li>
+      <li><strong>V<sub>DS</sub></strong> — sets drain voltage, controlling the potential drop along the channel.</li>
+      <li><strong>Length / Width toggles</strong> — change device geometry. A shorter channel increases current
+        and channel-length modulation, while a wider device increases total current proportionally.</li>
+    </ul>
+  
+    <p class="note">
+      The graphs on the right show <i>I<sub>D</sub></i> vs <i>V<sub>GS</sub></i> and
+      <i>I<sub>D</sub></i> vs <i>V<sub>DS</sub></i> characteristics derived from the
+      square-law MOSFET model with channel-length modulation.
+    </p>
+  </section>
+  
+  <section id="equations">
+    <h2>Model Equations</h2>
+  
+    <p>
+      The simulator uses the <strong>classical square-law MOSFET model</strong> with
+      a simple channel-length modulation term.
+    </p>
+  
+    <p><strong>Cutoff region</strong> (<i>V<sub>GS</sub></i> &lt; <i>V<sub>TH</sub></i>):</p>
+    <p>
+      $$ I_D = 0 $$
+    </p>
+  
+    <p><strong>Linear (Ohmic) region</strong> (<i>V<sub>DS</sub></i> &lt; <i>V<sub>GS</sub></i> − <i>V<sub>TH</sub></i>):</p>
+    <p>
+      $$ I_D = K \left[ (V_{GS} - V_{TH})V_{DS} - \tfrac{1}{2}V_{DS}^2 \right] $$
+    </p>
+  
+    <p><strong>Saturation region</strong> (<i>V<sub>DS</sub></i> ≥ <i>V<sub>GS</sub></i> − <i>V<sub>TH</sub></i>):</p>
+    <p>
+      $$ I_D = \tfrac{1}{2}K(V_{GS} - V_{TH})^2\bigl(1 + \lambda(V_{DS} - V_{DS,sat})\bigr) $$
+    </p>
+    <p>
+      $$ V_{DS,sat} = V_{GS} - V_{TH} $$
+    </p>
+  
+    <p>The transconductance parameter \( K \) is defined as:</p>
+    <p>
+      $$ K = \tfrac{1}{2}\mu_n C_{ox}\frac{W}{L} $$
+    </p>
+  
+    <p class="note">
+      Here, \( \mu_n \) is the electron mobility, \( C_{ox} \) is the gate-oxide capacitance per unit area,
+      \( W \) and \( L \) are the channel width and length, \( \lambda \) is the channel-length modulation coefficient,
+      and \( V_{TH} \) is the threshold voltage.
+    </p>
+  </section>
+  
+    <hr style="max-width: 900px; margin: 3rem auto; border: none; border-top: 1px solid #ccc;">
+  
+    <footer style="text-align: center; font-size: 0.9rem; color: #666; margin-bottom: 2rem;">
+      © 2025 Anton Babushkin · Kyiv School of Economics
+    </footer>
+  
+  
+  
+  <!-- Chart.js and plugin -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@1.1.1/dist/chartjs-plugin-zoom.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.4.0/dist/chartjs-plugin-annotation.min.js"></script>
+  
+  <!-- MathJax for equations -->
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  
+  <script src="js/script.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</body>
+</html>
