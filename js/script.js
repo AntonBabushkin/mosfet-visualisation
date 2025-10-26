@@ -89,7 +89,7 @@ svgObject.addEventListener("load", () => {
     refreshAllPlots();
     updateCharts();
   
-    width_value.innerHTML = Width ? "2×W<sub>min</sub>" : "W<sub>min</sub>";
+    width_value.innerHTML = Width ? "Wide (2×W<sub>min</sub>)" : "Narrow (W<sub>min</sub>)";
   });
   
   // --- Initialize plots ---

@@ -25,9 +25,9 @@
    inkscape:pagecheckerboard="0"
    inkscape:deskcolor="#d1d1d1"
    inkscape:document-units="mm"
-   inkscape:zoom="2.0000001"
-   inkscape:cx="160.24999"
-   inkscape:cy="8.2499996"
+   inkscape:zoom="4.0000002"
+   inkscape:cx="156.87499"
+   inkscape:cy="24.374999"
    inkscape:window-width="1920"
    inkscape:window-height="1001"
    inkscape:window-x="-9"
@@ -675,60 +675,6 @@
    </g>
   </g><g
    class="com.sun.star.drawing.CustomShape"
-   id="g57"
-   transform="translate(0,-231.51041)">
-   <g
-   id="id15">
-    <rect
-   class="BoundingBox"
-   stroke="none"
-   fill="none"
-   x="2573"
-   y="2014"
-   width="1572"
-   height="647"
-   id="rect56" />
-    <path
-   fill="#5983b0"
-   stroke="none"
-   d="m 3359,2660 h -786 v -646 h 1571 v 646 z"
-   id="path56" />
-   </g>
-  </g><g
-   class="TextShape"
-   id="g59"
-   transform="translate(0,-231.51041)">
-   <g
-   id="id16">
-    <rect
-   class="BoundingBox"
-   stroke="none"
-   fill="none"
-   x="3172"
-   y="2151"
-   width="473"
-   height="349"
-   id="rect57" />
-    <text
-   class="SVGTextShape"
-   id="text59"><tspan
-     class="TextParagraph"
-     id="tspan59"><tspan
-       class="TextPosition"
-       x="3172"
-       y="2409"
-       id="tspan58"><tspan
-         font-family="Arial, sans-serif"
-         font-size="282px"
-         font-weight="400"
-         lengthAdjust="spacingAndGlyphs"
-         fill="#000000"
-         stroke="none"
-         style="white-space:pre"
-         id="tspan57">N+</tspan></tspan></tspan></text>
-   </g>
-  </g><g
-   class="com.sun.star.drawing.CustomShape"
    id="MOSFET_Drain_Depletion_Region"
    transform="translate(0,-231.51041)">
    <g
@@ -805,6 +751,69 @@
   </g>
 <g
    class="com.sun.star.drawing.CustomShape"
+   id="MOSFET_Channel_Oxide"
+   transform="matrix(1.0167508,0,0,1,-80.724699,-231.51041)">
+   <g
+   id="id4">
+    <rect
+   class="BoundingBox"
+   stroke="none"
+   fill="none"
+   x="4156"
+   y="1833"
+   width="1601"
+   height="183"
+   id="rect34" />
+    <path
+   fill="#dddddd"
+   stroke="none"
+   d="m 4956,2015 h -800 v -182 h 1600 v 182 z"
+   id="path35" />
+   </g>
+  </g><g
+   class="com.sun.star.drawing.CustomShape"
+   id="MOSFET_Channel_Poly"
+   transform="matrix(1.0161274,0,0,1,-77.549196,-178.59374)">
+   <g
+   id="id5">
+    <rect
+   class="BoundingBox"
+   stroke="none"
+   fill="none"
+   x="4156"
+   y="1655"
+   width="1601"
+   height="178"
+   id="rect35" />
+    <path
+   fill="#813709"
+   stroke="none"
+   d="m 4956,1832 h -800 v -177 h 1600 v 177 z"
+   id="path36" />
+   </g>
+  </g><g
+   class="com.sun.star.drawing.CustomShape"
+   id="MOSFET_Channel"
+   transform="matrix(0.99647259,0,0,1,14.603497,-231.51041)">
+   <g
+   id="id21">
+    <rect
+   class="BoundingBox"
+   stroke="none"
+   fill="none"
+   x="4140"
+   y="2014"
+   width="1639"
+   height="43"
+   id="rect64" />
+    <path
+   fill="#5983b0"
+   stroke="none"
+   d="m 4959,2056 h -819 v -42 h 1638 v 42 z"
+   id="path64" />
+   </g>
+  </g><g
+   class="com.sun.star.drawing.CustomShape"
    id="MOSFET_Drain"
    transform="translate(0,-231.51041)">
    <g
@@ -859,65 +868,56 @@
    </g>
   </g><g
    class="com.sun.star.drawing.CustomShape"
-   id="MOSFET_Channel"
-   transform="matrix(0.99647259,0,0,1,14.603497,-231.51041)">
+   id="g57"
+   transform="translate(0,-231.51041)">
    <g
-   id="id21">
+   id="id15">
     <rect
    class="BoundingBox"
    stroke="none"
    fill="none"
-   x="4140"
+   x="2573"
    y="2014"
-   width="1639"
-   height="43"
-   id="rect64" />
+   width="1572"
+   height="647"
+   id="rect56" />
     <path
    fill="#5983b0"
    stroke="none"
-   d="m 4959,2056 h -819 v -42 h 1638 v 42 z"
-   id="path64" />
+   d="m 3359,2660 h -786 v -646 h 1571 v 646 z"
+   id="path56" />
    </g>
   </g><g
-   class="com.sun.star.drawing.CustomShape"
-   id="MOSFET_Channel_Oxide"
-   transform="matrix(1.0167508,0,0,1,-80.724699,-231.51041)">
+   class="TextShape"
+   id="g59"
+   transform="translate(0,-231.51041)">
    <g
-   id="id4">
+   id="id16">
     <rect
    class="BoundingBox"
    stroke="none"
    fill="none"
-   x="4156"
-   y="1833"
-   width="1601"
-   height="183"
-   id="rect34" />
-    <path
-   fill="#dddddd"
-   stroke="none"
-   d="m 4956,2015 h -800 v -182 h 1600 v 182 z"
-   id="path35" />
-   </g>
-  </g><g
-   class="com.sun.star.drawing.CustomShape"
-   id="MOSFET_Channel_Poly"
-   transform="matrix(1.0161274,0,0,1,-77.549196,-178.59374)">
-   <g
-   id="id5">
-    <rect
-   class="BoundingBox"
-   stroke="none"
-   fill="none"
-   x="4156"
-   y="1655"
-   width="1601"
-   height="178"
-   id="rect35" />
-    <path
-   fill="#813709"
-   stroke="none"
-   d="m 4956,1832 h -800 v -177 h 1600 v 177 z"
-   id="path36" />
+   x="3172"
+   y="2151"
+   width="473"
+   height="349"
+   id="rect57" />
+    <text
+   class="SVGTextShape"
+   id="text59"><tspan
+     class="TextParagraph"
+     id="tspan59"><tspan
+       class="TextPosition"
+       x="3172"
+       y="2409"
+       id="tspan58"><tspan
+         font-family="Arial, sans-serif"
+         font-size="282px"
+         font-weight="400"
+         lengthAdjust="spacingAndGlyphs"
+         fill="#000000"
+         stroke="none"
+         style="white-space:pre"
+         id="tspan57">N+</tspan></tspan></tspan></text>
    </g>
   </g></svg>
