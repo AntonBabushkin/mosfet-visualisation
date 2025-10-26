@@ -47,6 +47,7 @@
     <span class="readout">V<sub>th</sub>=<span id="vthValue">0.5</span></span>
     <span class="readout">V<sub>ov</sub>=<span id="vovValue">0.0</span></span>
     <span class="readout">W/L∝<span id="woverlValue">1/2</span></span>
+	<span class="readout">Mode:<span id="modeValue">Cutoff</></span>
   </div>
   
   <div class="plots-wrapper">
@@ -84,8 +85,8 @@
     </ul>
   
     <p class="note">
-      The graphs on the right show <i>I<sub>D</sub></i> vs <i>V<sub>GS</sub></i> and
-      <i>I<sub>D</sub></i> vs <i>V<sub>DS</sub></i> characteristics derived from the
+      The graph on the left show <i>I<sub>D,SAT</sub></i> vs <i>V<sub>GS</sub></i> and
+      on the right <i>I<sub>D</sub></i> vs <i>V<sub>DS</sub></i> characteristics derived from the
       square-law MOSFET model with channel-length modulation.
     </p>
   </section>
@@ -116,16 +117,22 @@
       $$ V_{DS,sat} = V_{GS} - V_{TH} $$
     </p>
   
-    <p>The transconductance parameter \( K \) is defined as:</p>
+    <p>The process-dependent transconductance parameter (sometimes called the gain factor) \( K \) is defined as:</p>
     <p>
       $$ K = \tfrac{1}{2}\mu_n C_{ox}\frac{W}{L} $$
     </p>
-  
-    <p class="note">
+	
+	<p class="note">
       Here, \( \mu_n \) is the electron mobility, \( C_{ox} \) is the gate-oxide capacitance per unit area,
       \( W \) and \( L \) are the channel width and length, \( \lambda \) is the channel-length modulation coefficient,
       and \( V_{TH} \) is the threshold voltage.
     </p>
+	<p class="note">
+      The small-signal transconductance is related to \( K \) by \( g_m = K(V_{GS} - V_{TH}) \),
+      showing that \( g_m \) increases linearly with overdrive voltage.
+    </p>
+  
+    
   </section>
   
     <hr style="max-width: 900px; margin: 3rem auto; border: none; border-top: 1px solid #ccc;">

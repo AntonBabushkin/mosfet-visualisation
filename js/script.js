@@ -12,6 +12,7 @@ const len_value    = document.getElementById("lenValue");
 const width_switch = document.getElementById("widthSwitch");
 const width_value  = document.getElementById("widthValue");
 const woverlValue  = document.getElementById("woverlValue");
+const mode_value = document.getElementById("modeValue");
 
 
 let ch_path, dep_drain_path, dep_channel_path, drain_shape;
@@ -136,7 +137,17 @@ function update_geometry() {
   vth_value.textContent = `${VTH.toFixed(2)} V`;
   vov_value.textContent = `${Vov.toFixed(2)} V`;
   len_value.innerHTML = len > 0.6 ? "Long (2×L<sub>min</sub>)" : "Short (L<sub>min</sub>)";
-
+  
+  let modeText = "";
+  if (Vgs <= VTH) {
+    modeText = "Cutoff";
+  } else if (Vds < (Vgs - VTH)) {
+    modeText = "Linear";
+  } else {
+    modeText = "Saturation";
+  }
+  mode_value.textContent = modeText;
+  
   const vds_frac = clamp01(Vds / VDS_MAX);
   const vds_sqrt = Math.sqrt(vds_frac);
   

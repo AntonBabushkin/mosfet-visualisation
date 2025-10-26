@@ -63,14 +63,15 @@ input[type="range"] {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;   /* clean spacing between Vth and Vov blocks */
+  gap: 40px;
 }
 
 .readout {
-  white-space: nowrap;  /* prevent line breaks inside */
+  display: inline-block;
+  white-space: nowrap;
+  min-width: 120px;     /* reserve enough width for longest text */
+  text-align: left;     /* align text inside each block */
 }
-
-
 
 /*************************************/
 /*        Slider Button styling      */
