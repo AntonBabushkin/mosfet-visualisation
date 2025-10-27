@@ -60,7 +60,7 @@ input[type="range"] {
 .readout {
   display: inline-block;
   white-space: nowrap;
-  width: 130px;                         /* fixed equal width for all readouts */
+  width: 80px;                         /* fixed equal width for all readouts */
   text-align: left;                     /* keep values aligned neatly */
   font-variant-numeric: tabular-nums;   /* equal-width digits for 0.0 vs 1.5 */
 }
